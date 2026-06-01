@@ -232,6 +232,51 @@ function NavBar({ page, setPage, premium, setPremium }) {
 }
 
 function HomePage({ setPage, setPremium }) {
+  const helpCards = [
+    {
+      icon: "💰",
+      title: "Find Funding",
+      desc: "Discover grants, loans, investors, and funding resources that can help your business move forward.",
+      action: "Explore Funding",
+      page: "resources",
+    },
+    {
+      icon: "🤝",
+      title: "Meet Mentors",
+      desc: "Connect with experienced business owners and advisors who understand what it takes to build.",
+      action: "Join Community",
+      page: "community",
+    },
+    {
+      icon: "🤖",
+      title: "Ask Bone AI",
+      desc: "Get practical business guidance 24/7 on funding, planning, marketing, operations, and next steps.",
+      action: "Ask Bone",
+      page: "bone",
+    },
+    {
+      icon: "🏪",
+      title: "Find Opportunities",
+      desc: "Discover partnerships, wholesale leads, pitch events, resources, and growth opportunities in one place.",
+      action: "See Opportunities",
+      page: "resources",
+    },
+    {
+      icon: "👥",
+      title: "Join A Real Community",
+      desc: "Talk with other business owners who understand the pressure, the grind, and the wins.",
+      action: "Enter Community",
+      page: "community",
+    },
+    {
+      icon: "🦴",
+      title: "Pitch In Bone Tank",
+      desc: "Premium members can prepare, pitch, gain visibility, and connect with people who may help them grow.",
+      action: "View Bone Tank",
+      page: "bonetank",
+    },
+  ];
+
   return (
     <div>
       {/* Hero with faint US flag background */}
@@ -292,13 +337,16 @@ function HomePage({ setPage, setPremium }) {
             <MiniFlag size={16} />
           </div>
 
-          {/* Tagline */}
-          <div style={{ marginTop: 36, maxWidth: 640 }}>
-            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 24, fontWeight: 700, lineHeight: 1.45, letterSpacing: 0.5 }}>
-              "Small Businesses Are The Backbone of America."
+          {/* Clearer homepage message */}
+          <div style={{ marginTop: 34, maxWidth: 760 }}>
+            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 30, fontWeight: 700, lineHeight: 1.35, letterSpacing: 0.3 }}>
+              Small Businesses Are The Backbone of America.
+            </div>
+            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 24, fontWeight: 700, lineHeight: 1.35, marginTop: 10 }}>
+              Now They Have a Community Built Just for Them.
             </div>
             {/* Red/white/blue divider */}
-            <div style={{ display: "flex", height: 3, borderRadius: 3, overflow: "hidden", margin: "14px auto", maxWidth: 280 }}>
+            <div style={{ display: "flex", height: 3, borderRadius: 3, overflow: "hidden", margin: "16px auto", maxWidth: 320 }}>
               <div style={{ flex: 1, background: "#B22234" }} />
               <div style={{ flex: 1, background: "#FFFFFF" }} />
               <div style={{ flex: 1, background: "#B22234" }} />
@@ -307,14 +355,11 @@ function HomePage({ setPage, setPremium }) {
               <div style={{ flex: 1, background: "#FFFFFF" }} />
               <div style={{ flex: 1, background: "#B22234" }} />
             </div>
-            <div style={{ color: "rgba(255,255,255,0.78)", fontSize: 17, fontStyle: "italic", lineHeight: 1.5 }}>
-              Now they finally have one.
+            <div style={{ color: "rgba(255,255,255,0.78)", fontSize: 17, lineHeight: 1.65, maxWidth: 650, margin: "0 auto" }}>
+              Backbone connects business owners with resources, funding, mentors, AI guidance, opportunities, and a community that understands the journey of building something from the ground up.
             </div>
           </div>
 
-          <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, marginTop: 18, maxWidth: 460, lineHeight: 1.75 }}>
-            Connect to resources, find your people, and get AI-powered guidance — all in one place built for bootstrapped owners like you.
-          </div>
           <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap", justifyContent: "center" }}>
             <button onClick={() => setPage("resources")} style={{
               background: WHITE, color: BLUE_DARK, border: "none", padding: "14px 28px",
@@ -323,14 +368,14 @@ function HomePage({ setPage, setPremium }) {
             <button onClick={() => setPremium(true)} style={{
               background: "rgba(255,255,255,0.1)", color: WHITE, border: "2px solid rgba(255,255,255,0.35)",
               padding: "14px 28px", borderRadius: 10, cursor: "pointer", fontSize: 15, fontWeight: 600,
-            }}>Start Free Trial</button>
+            }}>Join Backbone</button>
           </div>
         </div>
       </div>
 
-      {/* Stats bar */}
+      {/* Stats / trust bar */}
       <div style={{ background: BLUE_LIGHT, padding: "20px 24px", display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap" }}>
-        {[["33M+", "Small Businesses in the U.S.", true], ["500+", "Verified Resources", true], ["Free", "Always for core features", false], ["24/7", "AI Assistant 'Bone'", false]].map(([stat, label, flag]) => (
+        {[["33M+", "Small Businesses in the U.S.", true], ["500+", "Business Resources", true], ["Free", "Core Tools Available", false], ["24/7", "AI Guidance with Bone", false]].map(([stat, label, flag]) => (
           <div key={stat} style={{ textAlign: "center" }}>
             <div style={{ color: BLUE_DARK, fontFamily: "Georgia, serif", fontSize: 26, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
               {stat}{flag && <MiniFlag size={20} />}
@@ -340,41 +385,54 @@ function HomePage({ setPage, setPremium }) {
         ))}
       </div>
 
-      {/* Three pillars */}
-      <div style={{ padding: "60px 24px", maxWidth: 900, margin: "0 auto" }}>
+      {/* What Backbone helps with */}
+      <div style={{ padding: "60px 24px", maxWidth: 1040, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <div style={{ color: BLUE_DARK, fontFamily: "Georgia, serif", fontSize: 28, fontWeight: 700 }}>Everything you need. One platform.</div>
-          <div style={{ color: "#5a6a9a", fontSize: 15, marginTop: 8 }}>Built for bootstrapped owners who carry the weight of their dreams alone.</div>
+          <div style={{ color: BLUE_DARK, fontFamily: "Georgia, serif", fontSize: 30, fontWeight: 700 }}>What Can Backbone Help You Do Today?</div>
+          <div style={{ color: "#5a6a9a", fontSize: 15, marginTop: 10, maxWidth: 620, marginLeft: "auto", marginRight: "auto", lineHeight: 1.6 }}>
+            Whether you are starting, stuck, growing, looking for funding, or just need people who understand business ownership, Backbone gives you a clearer place to begin.
+          </div>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-          {[
-            { icon: "🔍", title: "Find Resources", desc: "Search 500+ verified grants, loans, nonprofit programs, and government resources — filtered to your exact situation.", action: "Search Resources", page: "resources" },
-            { icon: "🤖", title: "Ask Bone (AI)", desc: "Your 24/7 AI business advisor trained on U.S. small business programs, legal basics, and the Backbone directory.", action: "Ask a Question", page: "bone" },
-            { icon: "🤝", title: "Find Your People", desc: "Peer networking, community forums, B2B mutual aid marketplace, and video networking rooms for small business owners.", action: "Join Community", page: "community" },
-          ].map(pillar => (
-            <div key={pillar.title} style={{
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
+          {helpCards.map(card => (
+            <div key={card.title} style={{
               background: WHITE,
               border: `1px solid ${BLUE_LIGHT}`,
               borderRadius: 16,
-              padding: 28,
+              padding: 26,
               boxShadow: "0 4px 20px rgba(26,58,171,0.07)",
             }}>
-              <div style={{ fontSize: 36, marginBottom: 12 }}>{pillar.icon}</div>
-              <div style={{ color: BLUE_DARK, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{pillar.title}</div>
-              <div style={{ color: "#5a6a9a", fontSize: 14, lineHeight: 1.6, marginBottom: 16 }}>{pillar.desc}</div>
-              <button onClick={() => setPage(pillar.page)} style={{
+              <div style={{ fontSize: 34, marginBottom: 12 }}>{card.icon}</div>
+              <div style={{ color: BLUE_DARK, fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{card.title}</div>
+              <div style={{ color: "#5a6a9a", fontSize: 14, lineHeight: 1.6, marginBottom: 16 }}>{card.desc}</div>
+              <button onClick={() => setPage(card.page)} style={{
                 background: BLUE_LIGHT, color: BLUE_DARK, border: "none", padding: "8px 16px",
                 borderRadius: 8, cursor: "pointer", fontSize: 13, fontWeight: 700,
-              }}>{pillar.action} →</button>
+              }}>{card.action} →</button>
             </div>
           ))}
         </div>
       </div>
 
+      {/* Why Backbone */}
+      <div style={{ background: GRAY, padding: "58px 24px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ color: BLUE_DARK, fontFamily: "Georgia, serif", fontSize: 30, fontWeight: 700 }}>Why Backbone?</div>
+          <div style={{ color: TEXT, fontSize: 18, fontWeight: 700, marginTop: 18 }}>
+            Most business owners are expected to figure everything out alone.
+          </div>
+          <div style={{ color: "#5a6a9a", fontSize: 16, lineHeight: 1.75, marginTop: 14, maxWidth: 760, marginLeft: "auto", marginRight: "auto" }}>
+            Backbone brings entrepreneurs together in one place to connect, collaborate, learn, and grow. Whether you are launching a startup, running an established company, looking for funding, seeking trusted business connections, or trying to decide your next move, Backbone helps you move forward with more support and less confusion.
+          </div>
+        </div>
+      </div>
+
       {/* Premium CTA */}
       <div style={{ background: `linear-gradient(135deg, ${BLUE_DARK}, ${BLUE_MED})`, padding: "48px 24px", textAlign: "center" }}>
-        <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 26, fontWeight: 700 }}>Unlock the full Backbone experience</div>
-        <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 15, marginTop: 10, maxWidth: 480, margin: "10px auto 0" }}>AI assistant, unlimited networking, video rooms, real-time grant alerts, and more.</div>
+        <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 26, fontWeight: 700 }}>Join the Backbone Community</div>
+        <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 15, marginTop: 10, maxWidth: 560, margin: "10px auto 0", lineHeight: 1.65 }}>
+          Create your profile, connect with other business owners, use Bone for guidance, and start finding the resources and relationships that can help your business grow.
+        </div>
         <div style={{ color: WHITE, fontSize: 36, fontWeight: 700, marginTop: 20 }}>$9.99<span style={{ fontSize: 16, opacity: 0.7 }}>/month</span></div>
         <button onClick={() => setPremium(true)} style={{
           background: WHITE, color: BLUE_DARK, border: "none", padding: "14px 32px",
