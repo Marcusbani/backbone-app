@@ -169,22 +169,22 @@ function NavBar({ page, setPage, premium, setPremium }) {
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      height: 72,
+      height: 60,
       position: "sticky",
       top: 0,
       zIndex: 100,
       boxShadow: "0 2px 20px rgba(26,58,171,0.3)"
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }} onClick={() => setPage("home")}>
-        <BBLogo size={48} dark={true} />
+        <BBLogo size={36} dark={true} />
         <div>
-          <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontWeight: 700, fontSize: 22, letterSpacing: 4 }}>BACKBONE</div>
+          <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontWeight: 700, fontSize: 16, letterSpacing: 3 }}>BACKBONE</div>
           <div style={{ display: "flex", alignItems: "center", gap: 5, marginTop: 1 }}>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 10, letterSpacing: 2.5 }}>SMALL BUSINESS NETWORK</div>
-            <MiniFlag size={14} />
-            <MiniFlag size={14} />
+            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 8, letterSpacing: 2 }}>SMALL BUSINESS NETWORK</div>
+            <MiniFlag size={12} />
+            <MiniFlag size={12} />
           </div>
-          <div style={{ color: "rgba(255,255,255,0.35)", fontSize: 8, letterSpacing: 2.5, marginTop: 2 }}>EST. 2026 · U.S.A.</div>
+          <div style={{ color: "rgba(255,255,255,0.35)", fontSize: 7, letterSpacing: 2, marginTop: 1 }}>EST. 2026 · U.S.A.</div>
         </div>
       </div>
       <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
@@ -195,6 +195,7 @@ function NavBar({ page, setPage, premium, setPremium }) {
           { id: "commandcenter", label: "🎯 My Hub" },
           { id: "bonetank", label: "🦴 Bone Tank" },
           { id: "breakroom", label: "☕ Break Room" },
+          { id: "global", label: "🌍 Backbone Global" },
         ].map(item => (
           <button key={item.id} onClick={() => setPage(item.id)} style={{
             background: page === item.id ? "rgba(255,255,255,0.15)" : "transparent",
@@ -281,13 +282,13 @@ function HomePage({ setPage, setPremium }) {
     <div>
       {/* Hero with faint US flag background */}
       <div style={{
-        minHeight: 420,
+        minHeight: 500,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        padding: "48px 24px 54px",
+        padding: "70px 24px 60px",
         position: "relative",
         overflow: "hidden",
         background: "#0d1f6e",
@@ -329,17 +330,24 @@ function HomePage({ setPage, setPremium }) {
         </div>
 
         {/* Hero content */}
-        <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+        <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <BBLogo size={72} dark={true} />
+          <div style={{ marginTop: 18, color: WHITE, fontFamily: "Georgia, serif", fontWeight: 700, fontSize: 42, letterSpacing: 6, lineHeight: 1 }}>BACKBONE</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 6 }}>
+            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 10, letterSpacing: 3 }}>SMALL BUSINESS NETWORK</div>
+            <MiniFlag size={16} />
+          </div>
+
           {/* Clearer homepage message */}
-          <div style={{ maxWidth: 820 }}>
-            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 38, fontWeight: 700, lineHeight: 1.28, letterSpacing: 0.3 }}>
+          <div style={{ marginTop: 34, maxWidth: 760 }}>
+            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 30, fontWeight: 700, lineHeight: 1.35, letterSpacing: 0.3 }}>
               Small Businesses Are The Backbone of America.
             </div>
-            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 27, fontWeight: 700, lineHeight: 1.35, marginTop: 12 }}>
+            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 24, fontWeight: 700, lineHeight: 1.35, marginTop: 10 }}>
               Now They Have a Community Built Just for Them.
             </div>
             {/* Red/white/blue divider */}
-            <div style={{ display: "flex", height: 4, borderRadius: 4, overflow: "hidden", margin: "18px auto", maxWidth: 340 }}>
+            <div style={{ display: "flex", height: 3, borderRadius: 3, overflow: "hidden", margin: "16px auto", maxWidth: 320 }}>
               <div style={{ flex: 1, background: "#B22234" }} />
               <div style={{ flex: 1, background: "#FFFFFF" }} />
               <div style={{ flex: 1, background: "#B22234" }} />
@@ -348,44 +356,12 @@ function HomePage({ setPage, setPremium }) {
               <div style={{ flex: 1, background: "#FFFFFF" }} />
               <div style={{ flex: 1, background: "#B22234" }} />
             </div>
-            <div style={{ color: "rgba(255,255,255,0.82)", fontSize: 18, lineHeight: 1.65, maxWidth: 720, margin: "0 auto" }}>
+            <div style={{ color: "rgba(255,255,255,0.78)", fontSize: 17, lineHeight: 1.65, maxWidth: 650, margin: "0 auto" }}>
               Backbone connects business owners with resources, funding, mentors, AI guidance, opportunities, and a community that understands the journey of building something from the ground up.
             </div>
           </div>
 
-          <div style={{
-            marginTop: 30,
-            maxWidth: 720,
-            width: "100%",
-            background: "rgba(255,255,255,0.06)",
-            border: "1px solid rgba(255,255,255,0.16)",
-            borderRadius: 18,
-            padding: "22px 26px",
-            display: "flex",
-            alignItems: "center",
-            gap: 18,
-            boxShadow: "0 14px 40px rgba(0,0,0,0.18)",
-          }}>
-            <div style={{
-              minWidth: 58,
-              width: 58,
-              height: 58,
-              borderRadius: "50%",
-              background: BLUE_DARK,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: WHITE,
-              fontSize: 28,
-              boxShadow: "0 8px 24px rgba(0,0,0,0.18)",
-            }}>★</div>
-            <div style={{ textAlign: "left", color: WHITE, fontSize: 20, fontWeight: 800, lineHeight: 1.45 }}>
-              Most platforms are designed to maximize attention.<br />
-              Backbone is designed to <span style={{ color: BLUE_LIGHT }}>maximize advancement.</span>
-            </div>
-          </div>
-
-          <div style={{ display: "flex", gap: 12, marginTop: 30, flexWrap: "wrap", justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap", justifyContent: "center" }}>
             <button onClick={() => setPage("resources")} style={{
               background: WHITE, color: BLUE_DARK, border: "none", padding: "14px 28px",
               borderRadius: 10, cursor: "pointer", fontSize: 15, fontWeight: 700,
@@ -1515,6 +1491,310 @@ function CommandCenterPage({ premium }) {
   );
 }
 
+
+function BackboneGlobalPage({ setPage, setPremium }) {
+  const paths = [
+    {
+      icon: "🇺🇸",
+      title: "U.S. Businesses Looking Global",
+      accent: BLUE_MED,
+      bg: "#f2f6ff",
+      desc: "For American small businesses that want to export products, find international distributors, enter new markets, and connect with overseas partners.",
+      bullets: ["Export products", "Find international distributors", "Enter new markets", "Connect with overseas partners", "Learn international trade basics"],
+      button: "Explore Export Resources",
+      action: () => setPage("resources"),
+    },
+    {
+      icon: "🌎",
+      title: "International Businesses Entering the U.S.",
+      accent: "#138a45",
+      bg: "#f0fbf4",
+      desc: "For companies outside America that want to sell into the U.S., understand the market, and build trusted American business relationships.",
+      bullets: ["Sell products in the U.S.", "Find American partners", "Learn U.S. regulations", "Connect with distributors", "Build a U.S. presence"],
+      button: "Expand Into America",
+      action: () => setPage("community"),
+    },
+    {
+      icon: "💼",
+      title: "Global Investors",
+      accent: "#6b35d9",
+      bg: "#f6f1ff",
+      desc: "For investors interested in discovering small businesses, following Bone Tank pitches, and finding early strategic partnerships.",
+      bullets: ["Small business opportunities", "Bone Tank pitches", "Founder discovery", "Strategic partnerships", "Growth-stage companies"],
+      button: "View Opportunities",
+      action: () => setPage("bonetank"),
+    },
+  ];
+
+  const opportunityItems = [
+    { icon: "🌐", label: "Find Export Resources" },
+    { icon: "🤝", label: "Connect With U.S. Buyers" },
+    { icon: "👥", label: "Meet International Partners" },
+    { icon: "📍", label: "Explore New Markets" },
+    { icon: "💰", label: "Discover Investment Opportunities" },
+    { icon: "📄", label: "Learn Import & Export Basics" },
+  ];
+
+  const countries = [
+    ["🇨🇦", "Canada"],
+    ["🇬🇧", "United Kingdom"],
+    ["🇦🇺", "Australia"],
+    ["🇩🇪", "Germany"],
+    ["🇦🇪", "United Arab Emirates"],
+    ["🇸🇦", "Saudi Arabia"],
+    ["🇯🇵", "Japan"],
+    ["🇰🇷", "South Korea"],
+  ];
+
+  return (
+    <div style={{ background: "#f7f9ff" }}>
+      <section style={{
+        position: "relative",
+        overflow: "hidden",
+        minHeight: 430,
+        padding: "70px 48px",
+        color: WHITE,
+        background: "radial-gradient(circle at 76% 45%, rgba(63,132,255,0.55), transparent 28%), linear-gradient(135deg, #07163d 0%, #0b2b76 48%, #04112e 100%)",
+      }}>
+        <div style={{
+          position: "absolute",
+          right: "-90px",
+          top: "35px",
+          width: 460,
+          height: 460,
+          borderRadius: "50%",
+          border: "1px solid rgba(142,190,255,0.35)",
+          background: "radial-gradient(circle at 35% 35%, rgba(255,255,255,0.25), transparent 7%), radial-gradient(circle at 55% 45%, rgba(41,82,217,0.85), rgba(5,18,55,0.95) 65%)",
+          boxShadow: "0 0 80px rgba(86,156,255,0.45)",
+          opacity: 0.95,
+        }}>
+          {[0,1,2,3,4].map(i => (
+            <div key={i} style={{
+              position: "absolute",
+              left: 40 + i * 35,
+              top: 80 + i * 24,
+              width: 380 - i * 35,
+              height: 170 + i * 10,
+              border: "1px solid rgba(142,190,255,0.32)",
+              borderRadius: "50%",
+              transform: `rotate(${-24 + i * 12}deg)`,
+            }} />
+          ))}
+        </div>
+
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 620 }}>
+          <div style={{ fontSize: 50, marginBottom: 12 }}>🌐</div>
+          <h1 style={{ margin: 0, fontFamily: "Georgia, serif", fontSize: 48, lineHeight: 1.05, letterSpacing: -0.5 }}>
+            Backbone Global
+          </h1>
+          <div style={{ color: "#69a4ff", fontSize: 17, fontWeight: 800, letterSpacing: 1.4, textTransform: "uppercase", marginTop: 18 }}>
+            Connecting American Small Businesses With Global Opportunities.
+          </div>
+          <p style={{ fontSize: 17, lineHeight: 1.75, maxWidth: 560, color: "rgba(255,255,255,0.9)", marginTop: 22 }}>
+            Whether you're an investor, entrepreneur, exporter, manufacturer, or service provider, Backbone Global helps create trusted business relationships across borders.
+          </p>
+          <div style={{ display: "flex", gap: 16, marginTop: 28, flexWrap: "wrap" }}>
+            <button onClick={() => setPage("resources")} style={{
+              background: "#0b6bff",
+              color: WHITE,
+              border: "none",
+              padding: "14px 24px",
+              borderRadius: 8,
+              fontSize: 15,
+              fontWeight: 800,
+              cursor: "pointer",
+              boxShadow: "0 12px 25px rgba(0,0,0,0.25)",
+            }}>Explore Opportunities</button>
+            <button onClick={setPremium} style={{
+              background: "transparent",
+              color: WHITE,
+              border: "1px solid rgba(255,255,255,0.75)",
+              padding: "14px 24px",
+              borderRadius: 8,
+              fontSize: 15,
+              fontWeight: 800,
+              cursor: "pointer",
+            }}>Join Backbone Global</button>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ maxWidth: 1180, margin: "0 auto", padding: "34px 24px 70px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(285px, 1fr))", gap: 22, marginTop: 0 }}>
+          {paths.map((path, idx) => (
+            <div key={idx} style={{
+              background: path.bg,
+              border: "1px solid rgba(13,27,75,0.08)",
+              borderRadius: 22,
+              padding: 34,
+              boxShadow: "0 18px 40px rgba(13,27,75,0.08)",
+            }}>
+              <div style={{
+                width: 82,
+                height: 82,
+                borderRadius: "50%",
+                background: WHITE,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 38,
+                boxShadow: "0 12px 30px rgba(13,27,75,0.12)",
+                margin: "0 auto 22px",
+              }}>{path.icon}</div>
+              <h2 style={{
+                margin: 0,
+                textAlign: "center",
+                color: path.accent,
+                fontSize: 22,
+                lineHeight: 1.15,
+                textTransform: "uppercase",
+                letterSpacing: 0.4,
+              }}>{path.title}</h2>
+              <div style={{ width: 60, height: 4, background: path.accent, margin: "18px auto 24px", borderRadius: 99 }} />
+              <p style={{ color: "#42527b", lineHeight: 1.65, minHeight: 72 }}>{path.desc}</p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "18px 0 28px" }}>
+                {path.bullets.map((b, i) => (
+                  <li key={i} style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 10, color: TEXT }}>
+                    <span style={{
+                      width: 20,
+                      height: 20,
+                      borderRadius: "50%",
+                      background: path.accent,
+                      color: WHITE,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 12,
+                      fontWeight: 900,
+                    }}>✓</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <button onClick={path.action} style={{
+                width: "100%",
+                background: path.accent,
+                color: WHITE,
+                border: "none",
+                padding: "14px 18px",
+                borderRadius: 8,
+                fontWeight: 800,
+                cursor: "pointer",
+                fontSize: 15,
+              }}>{path.button}</button>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          background: "linear-gradient(135deg, #06184a, #0c2f83)",
+          borderRadius: 18,
+          padding: "30px 24px",
+          marginTop: 32,
+          color: WHITE,
+          boxShadow: "0 18px 40px rgba(13,27,75,0.14)",
+        }}>
+          <h2 style={{ textAlign: "center", margin: "0 0 26px", fontFamily: "Georgia, serif", fontSize: 30 }}>
+            What Can Backbone Global Help You Do?
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(145px, 1fr))", gap: 14 }}>
+            {opportunityItems.map((item, i) => (
+              <div key={i} style={{
+                textAlign: "center",
+                padding: "14px 10px",
+                borderRight: i !== opportunityItems.length - 1 ? "1px solid rgba(255,255,255,0.18)" : "none",
+              }}>
+                <div style={{ fontSize: 34, marginBottom: 10 }}>{item.icon}</div>
+                <div style={{ fontWeight: 700, lineHeight: 1.25 }}>{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ marginTop: 34 }}>
+          <h2 style={{ color: BLUE_DARK, fontSize: 24, marginBottom: 8 }}>Featured Countries</h2>
+          <div style={{ width: 52, height: 4, background: BLUE_MED, borderRadius: 99, marginBottom: 18 }} />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(125px, 1fr))", gap: 14 }}>
+            {countries.map(([flag, name]) => (
+              <div key={name} style={{
+                background: WHITE,
+                border: "1px solid #e3e8f5",
+                borderRadius: 12,
+                padding: "18px 10px",
+                textAlign: "center",
+                boxShadow: "0 10px 25px rgba(13,27,75,0.06)",
+              }}>
+                <div style={{ fontSize: 34 }}>{flag}</div>
+                <div style={{ marginTop: 8, color: TEXT, fontWeight: 800, fontSize: 13 }}>{name}</div>
+                <div style={{ height: 40, marginTop: 16, background: "linear-gradient(to top, #d9e7ff, transparent)", borderRadius: "0 0 8px 8px" }} />
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: 22 }}>
+            <button onClick={() => setPage("resources")} style={{
+              background: WHITE,
+              color: BLUE_DARK,
+              border: `2px solid ${BLUE_MED}`,
+              padding: "12px 22px",
+              borderRadius: 9,
+              fontWeight: 800,
+              cursor: "pointer",
+            }}>View More Countries & Opportunities</button>
+          </div>
+        </div>
+
+        <div style={{
+          marginTop: 34,
+          background: "linear-gradient(90deg, #fff5d9, #fffaf0)",
+          border: "1px solid #f0bf47",
+          borderRadius: 18,
+          padding: "24px 28px",
+          display: "flex",
+          alignItems: "center",
+          gap: 22,
+          flexWrap: "wrap",
+        }}>
+          <BoneMascot size={92} />
+          <div style={{ flex: 1, minWidth: 260 }}>
+            <h2 style={{ margin: "0 0 8px", color: BLUE_DARK, fontFamily: "Georgia, serif" }}>🌐 Bone's Global Tip</h2>
+            <p style={{ margin: 0, color: "#29375f", lineHeight: 1.65, fontSize: 16, fontStyle: "italic" }}>
+              “Many small businesses think going global is only for large corporations. The truth is some of the best export businesses start with a single overseas customer.”
+            </p>
+          </div>
+        </div>
+
+        <div style={{
+          marginTop: 28,
+          background: BLUE_DARK,
+          color: WHITE,
+          borderRadius: 18,
+          padding: "28px 34px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 20,
+          flexWrap: "wrap",
+        }}>
+          <div>
+            <h2 style={{ margin: 0, fontSize: 22 }}>Backbone Global is building the bridge.</h2>
+            <p style={{ margin: "8px 0 0", color: "rgba(255,255,255,0.82)" }}>Real connections. Real opportunities. Real growth.</p>
+          </div>
+          <button onClick={setPremium} style={{
+            background: WHITE,
+            color: BLUE_DARK,
+            border: "none",
+            padding: "13px 24px",
+            borderRadius: 9,
+            fontWeight: 900,
+            cursor: "pointer",
+          }}>Join the Global Community</button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+
 export default function BackboneApp() {
   const [page, setPage] = useState("home");
   const [premium, setPremium] = useState(false);
@@ -1531,6 +1811,7 @@ export default function BackboneApp() {
       case "upgrade": return <UpgradePage setPremium={handlePremiumClick} setPage={setPage} />;
       case "bonetank": return <BoneTankPage premium={premium} setPage={setPage} />;
       case "breakroom": return <BreakRoomPage />;
+      case "global": return <BackboneGlobalPage setPage={setPage} setPremium={handlePremiumClick} />;
       case "commandcenter": return <CommandCenterPage premium={premium} />;
       default: return <HomePage setPage={setPage} setPremium={handlePremiumClick} />;
     }
