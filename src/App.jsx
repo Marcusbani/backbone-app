@@ -169,22 +169,22 @@ function NavBar({ page, setPage, premium, setPremium }) {
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      height: 60,
+      height: 72,
       position: "sticky",
       top: 0,
       zIndex: 100,
       boxShadow: "0 2px 20px rgba(26,58,171,0.3)"
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }} onClick={() => setPage("home")}>
-        <BBLogo size={36} dark={true} />
+        <BBLogo size={48} dark={true} />
         <div>
-          <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontWeight: 700, fontSize: 16, letterSpacing: 3 }}>BACKBONE</div>
+          <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontWeight: 700, fontSize: 22, letterSpacing: 4 }}>BACKBONE</div>
           <div style={{ display: "flex", alignItems: "center", gap: 5, marginTop: 1 }}>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 8, letterSpacing: 2 }}>SMALL BUSINESS NETWORK</div>
-            <MiniFlag size={12} />
-            <MiniFlag size={12} />
+            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 10, letterSpacing: 2.5 }}>SMALL BUSINESS NETWORK</div>
+            <MiniFlag size={14} />
+            <MiniFlag size={14} />
           </div>
-          <div style={{ color: "rgba(255,255,255,0.35)", fontSize: 7, letterSpacing: 2, marginTop: 1 }}>EST. 2026 · U.S.A.</div>
+          <div style={{ color: "rgba(255,255,255,0.35)", fontSize: 8, letterSpacing: 2.5, marginTop: 2 }}>EST. 2026 · U.S.A.</div>
         </div>
       </div>
       <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
@@ -281,13 +281,13 @@ function HomePage({ setPage, setPremium }) {
     <div>
       {/* Hero with faint US flag background */}
       <div style={{
-        minHeight: 500,
+        minHeight: 420,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        padding: "70px 24px 60px",
+        padding: "48px 24px 54px",
         position: "relative",
         overflow: "hidden",
         background: "#0d1f6e",
@@ -329,24 +329,17 @@ function HomePage({ setPage, setPremium }) {
         </div>
 
         {/* Hero content */}
-        <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <BBLogo size={72} dark={true} />
-          <div style={{ marginTop: 18, color: WHITE, fontFamily: "Georgia, serif", fontWeight: 700, fontSize: 42, letterSpacing: 6, lineHeight: 1 }}>BACKBONE</div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 6 }}>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 10, letterSpacing: 3 }}>SMALL BUSINESS NETWORK</div>
-            <MiniFlag size={16} />
-          </div>
-
+        <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
           {/* Clearer homepage message */}
-          <div style={{ marginTop: 34, maxWidth: 760 }}>
-            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 30, fontWeight: 700, lineHeight: 1.35, letterSpacing: 0.3 }}>
+          <div style={{ maxWidth: 820 }}>
+            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 38, fontWeight: 700, lineHeight: 1.28, letterSpacing: 0.3 }}>
               Small Businesses Are The Backbone of America.
             </div>
-            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 24, fontWeight: 700, lineHeight: 1.35, marginTop: 10 }}>
+            <div style={{ color: WHITE, fontFamily: "Georgia, serif", fontSize: 27, fontWeight: 700, lineHeight: 1.35, marginTop: 12 }}>
               Now They Have a Community Built Just for Them.
             </div>
             {/* Red/white/blue divider */}
-            <div style={{ display: "flex", height: 3, borderRadius: 3, overflow: "hidden", margin: "16px auto", maxWidth: 320 }}>
+            <div style={{ display: "flex", height: 4, borderRadius: 4, overflow: "hidden", margin: "18px auto", maxWidth: 340 }}>
               <div style={{ flex: 1, background: "#B22234" }} />
               <div style={{ flex: 1, background: "#FFFFFF" }} />
               <div style={{ flex: 1, background: "#B22234" }} />
@@ -355,12 +348,44 @@ function HomePage({ setPage, setPremium }) {
               <div style={{ flex: 1, background: "#FFFFFF" }} />
               <div style={{ flex: 1, background: "#B22234" }} />
             </div>
-            <div style={{ color: "rgba(255,255,255,0.78)", fontSize: 17, lineHeight: 1.65, maxWidth: 650, margin: "0 auto" }}>
+            <div style={{ color: "rgba(255,255,255,0.82)", fontSize: 18, lineHeight: 1.65, maxWidth: 720, margin: "0 auto" }}>
               Backbone connects business owners with resources, funding, mentors, AI guidance, opportunities, and a community that understands the journey of building something from the ground up.
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap", justifyContent: "center" }}>
+          <div style={{
+            marginTop: 30,
+            maxWidth: 720,
+            width: "100%",
+            background: "rgba(255,255,255,0.06)",
+            border: "1px solid rgba(255,255,255,0.16)",
+            borderRadius: 18,
+            padding: "22px 26px",
+            display: "flex",
+            alignItems: "center",
+            gap: 18,
+            boxShadow: "0 14px 40px rgba(0,0,0,0.18)",
+          }}>
+            <div style={{
+              minWidth: 58,
+              width: 58,
+              height: 58,
+              borderRadius: "50%",
+              background: BLUE_DARK,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: WHITE,
+              fontSize: 28,
+              boxShadow: "0 8px 24px rgba(0,0,0,0.18)",
+            }}>★</div>
+            <div style={{ textAlign: "left", color: WHITE, fontSize: 20, fontWeight: 800, lineHeight: 1.45 }}>
+              Most platforms are designed to maximize attention.<br />
+              Backbone is designed to <span style={{ color: BLUE_LIGHT }}>maximize advancement.</span>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", gap: 12, marginTop: 30, flexWrap: "wrap", justifyContent: "center" }}>
             <button onClick={() => setPage("resources")} style={{
               background: WHITE, color: BLUE_DARK, border: "none", padding: "14px 28px",
               borderRadius: 10, cursor: "pointer", fontSize: 15, fontWeight: 700,
