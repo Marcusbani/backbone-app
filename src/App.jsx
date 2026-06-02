@@ -196,6 +196,7 @@ function NavBar({ page, setPage, premium, setPremium }) {
           { id: "bonetank", label: "🦴 Bone Tank" },
           { id: "breakroom", label: "☕ Break Room" },
           { id: "global", label: "🌍 Backbone Global" },
+          { id: "usamarket", label: "🇺🇸 USA Marketplace" },
         ].map(item => (
           <button key={item.id} onClick={() => setPage(item.id)} style={{
             background: page === item.id ? "rgba(255,255,255,0.15)" : "transparent",
@@ -1516,6 +1517,188 @@ function CommandCenterPage({ premium }) {
   );
 }
 
+
+function USAMarketplacePage({ setPage, setPremium }) {
+  const listings = [
+    {
+      category: "PRODUCTS",
+      name: "American Steel Co.",
+      location: "Pittsburgh, PA",
+      desc: "High-quality American steel products for construction and manufacturing.",
+      logo: "AMERICAN\nSTEEL CO.",
+      image: "linear-gradient(135deg, rgba(255,255,255,0.18), rgba(3,18,50,0.8)), repeating-linear-gradient(90deg, #233b5e 0 28px, #526d92 28px 32px)",
+    },
+    {
+      category: "SERVICES",
+      name: "Legal Services by Smith & Associates",
+      location: "Dallas, TX",
+      desc: "Business law, contracts, trademarks, and compliance solutions.",
+      logo: "⚖️\nSMITH",
+      image: "linear-gradient(135deg, rgba(255,255,255,0.14), rgba(3,18,50,0.86)), repeating-linear-gradient(90deg, #2e2218 0 14px, #8b6b45 14px 17px)",
+    },
+    {
+      category: "MANUFACTURERS",
+      name: "Freedom Fabrication",
+      location: "Henderson, NV",
+      desc: "Precision metal fabrication for industrial and commercial needs.",
+      logo: "FREEDOM\nFABRICATION",
+      image: "radial-gradient(circle at 70% 40%, rgba(99,180,255,0.9), transparent 12%), linear-gradient(135deg, rgba(255,255,255,0.12), rgba(3,18,50,0.92)), repeating-linear-gradient(0deg, #152a46 0 18px, #415a7c 18px 21px)",
+    },
+    {
+      category: "SUPPLIERS",
+      name: "Heartland Supply",
+      location: "Nashville, TN",
+      desc: "Industrial supplies and MRO products for American businesses.",
+      logo: "HEARTLAND\nSUPPLY",
+      image: "linear-gradient(135deg, rgba(255,255,255,0.16), rgba(3,18,50,0.84)), repeating-linear-gradient(90deg, #5b4331 0 36px, #b58a5d 36px 40px)",
+    },
+  ];
+
+  const filters = [
+    { title: "SEARCH & FILTERS", items: ["Industry", "Product Type", "Service Type", "State", "City"] },
+    { title: "OWNER CATEGORIES", items: ["Small business", "Veteran-owned", "Woman-owned", "Minority-owned", "USA-based", "Made in USA"] },
+    { title: "SERVICE PROVIDER TYPE", items: ["Legal", "Accounting", "Marketing", "Web Design", "Coaching"] },
+  ];
+
+  const plans = [
+    { icon: "🏷️", title: "Free Basic Listing", price: "$0", sub: "/month", desc: "Get listed in our directory. Basic visibility for your business.", button: "Get Started" },
+    { icon: "👑", title: "Premium Listing", price: "$9.99", sub: "/month", desc: "Enhanced visibility, custom profile, and more business details.", button: "Upgrade Now" },
+    { icon: "⭐", title: "Featured Listing", price: "$29", sub: "/month", desc: "Top placement in search results and category pages.", button: "Go Featured" },
+    { icon: "📣", title: "Sponsored Listing", price: "Variable Fee", sub: "", desc: "Category or keyword sponsorships for maximum exposure.", button: "Learn More" },
+    { icon: "🛡️", title: "Verified Plus", price: "Annual Fee", sub: "", desc: "Enhanced verification, trust badge, and premium benefits.", button: "Get Verified Plus" },
+  ];
+
+  return (
+    <div style={{ background: "#061838", minHeight: "100vh", color: WHITE }}>
+      <section style={{
+        position: "relative",
+        overflow: "hidden",
+        padding: "42px 34px 30px",
+        background: "radial-gradient(circle at 20% 60%, rgba(41,82,217,0.58), transparent 24%), radial-gradient(circle at 84% 60%, rgba(190,24,35,0.2), transparent 22%), linear-gradient(135deg, #07163d 0%, #0b2b76 50%, #06112d 100%)",
+        borderBottom: "1px solid rgba(255,255,255,0.12)",
+      }}>
+        <div style={{ position: "absolute", left: -60, top: 24, fontSize: 110, opacity: 0.08, letterSpacing: 8 }}>★ ★ ★</div>
+        <div style={{ position: "absolute", right: -35, top: 28, fontSize: 100, opacity: 0.08, letterSpacing: 8 }}>★ ★ ★</div>
+        <div style={{ maxWidth: 1220, margin: "0 auto", display: "grid", gridTemplateColumns: "260px 1fr", gap: 28, alignItems: "center", position: "relative", zIndex: 2 }}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-end" }}>
+            <BoneMascot size={210} style={{ filter: "drop-shadow(0 20px 24px rgba(0,0,0,0.38))" }} />
+          </div>
+          <div style={{ textAlign: "center" }}>
+            <h1 style={{ margin: 0, fontFamily: "Georgia, serif", fontSize: 48, lineHeight: 1.08, letterSpacing: 1.4, textShadow: "0 3px 14px rgba(0,0,0,0.35)" }}>
+              BACKBONE USA MARKETPLACE
+            </h1>
+            <div style={{ marginTop: 10, fontSize: 25, fontWeight: 900, letterSpacing: 0.2 }}>
+              Buy American. Hire American. Support American.
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 20, marginTop: 18, color: "#b8cdfd" }}>
+              <span style={{ width: 150, height: 3, background: "linear-gradient(90deg,#d33,#fff,#214bd9)", borderRadius: 3 }} />
+              <span style={{ color: "#d33", fontSize: 18 }}>★</span>
+              <span style={{ color: WHITE, fontSize: 18 }}>★</span>
+              <span style={{ color: "#2952d9", fontSize: 18 }}>★</span>
+              <span style={{ width: 150, height: 3, background: "linear-gradient(90deg,#214bd9,#fff,#d33)", borderRadius: 3 }} />
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 24, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
+              {[
+                ["842", "Businesses Listed"],
+                ["47", "States Represented"],
+                ["2,100", "Products & Services"],
+                ["317", "Verified Businesses"],
+              ].map(([num, label], i) => (
+                <div key={i} style={{ textAlign: "center" }}>
+                  <div style={{ color: "#68d5ff", fontSize: 36, fontWeight: 950, lineHeight: 1 }}>{num}</div>
+                  <div style={{ fontSize: 13, fontWeight: 800, marginTop: 5 }}>{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <main style={{ maxWidth: 1260, margin: "0 auto", padding: "22px 24px 34px", display: "grid", gridTemplateColumns: "230px 1fr", gap: 20 }}>
+        <aside style={{ background: "rgba(9,28,69,0.95)", border: "1px solid rgba(255,255,255,0.13)", borderRadius: 10, padding: 15, height: "fit-content", boxShadow: "0 14px 35px rgba(0,0,0,0.18)" }}>
+          {filters.map((group, gi) => (
+            <div key={group.title} style={{ borderBottom: gi < filters.length - 1 ? "1px solid rgba(255,255,255,0.1)" : "none", paddingBottom: 12, marginBottom: 12 }}>
+              <div style={{ fontSize: 11, fontWeight: 900, letterSpacing: 0.8, color: "rgba(255,255,255,0.78)", marginBottom: 8 }}>{group.title}</div>
+              {group.items.map((item, idx) => (
+                <label key={item} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "rgba(255,255,255,0.82)", padding: "4px 0", cursor: "pointer" }}>
+                  <input type="checkbox" style={{ accentColor: BLUE_MED }} />
+                  <span>{idx < 5 && gi === 0 ? "▸" : ""} {item}</span>
+                </label>
+              ))}
+              {gi === 2 && <div style={{ color: "#70a6ff", fontSize: 12, marginTop: 5 }}>+ Show More</div>}
+            </div>
+          ))}
+          <button style={{ width: "100%", background: "#d33b44", color: WHITE, border: "none", borderRadius: 7, padding: "10px 0", fontWeight: 800, cursor: "pointer" }}>Apply Filters</button>
+          <button style={{ width: "100%", background: "transparent", color: WHITE, border: "1px solid rgba(255,255,255,0.25)", borderRadius: 7, padding: "9px 0", fontWeight: 700, cursor: "pointer", marginTop: 8 }}>Clear All</button>
+        </aside>
+
+        <section>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 210px 120px", gap: 12, alignItems: "center", marginBottom: 12 }}>
+            <div style={{ background: "rgba(9,28,69,0.95)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 8, padding: "11px 14px", color: "rgba(255,255,255,0.62)", fontSize: 13 }}>
+              🔍 &nbsp; Search businesses, products, or services...
+            </div>
+            <select style={{ background: "rgba(9,28,69,0.95)", color: WHITE, border: "1px solid rgba(255,255,255,0.14)", borderRadius: 8, padding: "11px 12px" }}>
+              <option>Sort by: Relevance</option>
+              <option>Most Verified</option>
+              <option>Newest</option>
+            </select>
+            <div style={{ textAlign: "right", color: "rgba(255,255,255,0.72)", fontSize: 12 }}>View as: ▦ ☰</div>
+          </div>
+          <div style={{ color: "rgba(255,255,255,0.76)", fontSize: 12, marginBottom: 12 }}>Showing 1–12 of 842 businesses</div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 18 }}>
+            {listings.map((listing, idx) => (
+              <div key={listing.name} style={{ background: "rgba(9,28,69,0.98)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, overflow: "hidden", boxShadow: "0 16px 34px rgba(0,0,0,0.22)" }}>
+                <div style={{ height: 84, background: listing.image, position: "relative" }}>
+                  <div style={{ position: "absolute", left: 10, top: 9, background: BLUE_MED, color: WHITE, fontSize: 10, fontWeight: 900, padding: "4px 9px", borderRadius: 4, letterSpacing: 0.8 }}>{listing.category}</div>
+                  <div style={{ position: "absolute", right: 10, top: 8, fontSize: 20 }}>♡</div>
+                </div>
+                <div style={{ padding: "0 16px 16px", position: "relative" }}>
+                  <div style={{ width: 76, height: 76, borderRadius: "50%", background: "linear-gradient(145deg,#112b66,#071632)", border: "3px solid rgba(255,255,255,0.65)", marginTop: -38, display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", fontSize: 11, fontWeight: 950, lineHeight: 1.1, color: WHITE, whiteSpace: "pre-line" }}>{listing.logo}</div>
+                  <h3 style={{ margin: "10px 0 5px", fontSize: 18, lineHeight: 1.15 }}>{listing.name}</h3>
+                  <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 12, marginBottom: 8 }}>📍 {listing.location}</div>
+                  <p style={{ color: "rgba(255,255,255,0.78)", fontSize: 12, lineHeight: 1.55, minHeight: 56, margin: 0 }}>{listing.desc}</p>
+                  <div style={{ marginTop: 14, border: "1px solid rgba(255,255,255,0.18)", borderRadius: 9, padding: 11, background: "rgba(255,255,255,0.03)" }}>
+                    <div style={{ color: "#6eee6e", fontWeight: 900, marginBottom: 7 }}>🛡️ Backbone Verified</div>
+                    {["Business Identity Verified", "USA Business Verified", "Contact Information Verified"].map(x => (
+                      <div key={x} style={{ color: "rgba(255,255,255,0.86)", fontSize: 11, margin: "4px 0" }}>✓ &nbsp;{x}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: "flex", justifyContent: "center", gap: 12, alignItems: "center", margin: "16px 0 14px", color: "rgba(255,255,255,0.78)", fontSize: 13 }}>
+            <button style={{ background: "rgba(255,255,255,0.06)", color: WHITE, border: "1px solid rgba(255,255,255,0.14)", borderRadius: 6, padding: "6px 10px" }}>‹</button>
+            {[1,2,3,4,5].map(n => <span key={n} style={{ background: n === 1 ? BLUE_MED : "transparent", padding: "6px 10px", borderRadius: 6 }}>{n}</span>)}
+            <span>...</span><span>71</span>
+            <button style={{ background: "rgba(255,255,255,0.06)", color: WHITE, border: "1px solid rgba(255,255,255,0.14)", borderRadius: 6, padding: "6px 10px" }}>›</button>
+          </div>
+
+          <section style={{ background: "rgba(9,28,69,0.98)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 14, padding: "20px 18px", marginTop: 8 }}>
+            <h2 style={{ textAlign: "center", margin: "0 0 18px", fontFamily: "Georgia, serif", fontSize: 24, letterSpacing: 2 }}>OUR REVENUE MODEL</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: 12 }}>
+              {plans.map(plan => (
+                <div key={plan.title} style={{ border: "1px solid rgba(255,255,255,0.13)", borderRadius: 12, padding: 14, background: "rgba(255,255,255,0.035)", minHeight: 152 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: "50%", background: BLUE_MED, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, marginBottom: 10 }}>{plan.icon}</div>
+                  <div style={{ fontWeight: 900, fontSize: 14 }}>{plan.title}</div>
+                  <div style={{ fontWeight: 950, fontSize: plan.price.length > 12 ? 17 : 24, marginTop: 4 }}>{plan.price} <span style={{ fontSize: 12, opacity: 0.75, fontWeight: 500 }}>{plan.sub}</span></div>
+                  <p style={{ color: "rgba(255,255,255,0.72)", fontSize: 11, lineHeight: 1.45, minHeight: 42 }}>{plan.desc}</p>
+                  <button onClick={plan.title === "Premium Listing" ? setPremium : undefined} style={{ width: "100%", background: BLUE_MED, color: WHITE, border: "none", borderRadius: 7, padding: "8px 0", fontWeight: 800, cursor: "pointer" }}>{plan.button}</button>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: 16, color: "rgba(255,255,255,0.75)", fontSize: 13, textAlign: "center", fontStyle: "italic" }}>
+              🛡️ All paid plans help support our mission to empower and connect American small businesses.
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  );
+}
+
 function BackboneGlobalPage({ setPage, setPremium }) {
   const paths = [
     {
@@ -1840,6 +2023,7 @@ export default function BackboneApp() {
       case "bonetank": return <BoneTankPage premium={premium} setPage={setPage} />;
       case "breakroom": return <BreakRoomPage />;
       case "global": return <BackboneGlobalPage setPage={setPage} setPremium={handlePremiumClick} />;
+      case "usamarket": return <USAMarketplacePage setPage={setPage} setPremium={handlePremiumClick} />;
       case "commandcenter": return <CommandCenterPage premium={premium} />;
       default: return <HomePage setPage={setPage} setPremium={handlePremiumClick} />;
     }
